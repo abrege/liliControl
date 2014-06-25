@@ -26,6 +26,19 @@ void pixel(int p, int r, int g, int b) {
   update();
 }
 
+void testPixel() {
+  for (int i=0; i<192; i++) {
+    pixel(i, 255, 255, 255);
+    if (8<i)
+      pixel(i-8, 0, 0, 0);
+    else
+      pixel(192-i, 0, 0, 0);
+    update();
+  }
+}
+
+
+
 void fillTest(int d, int it) {
   for (int i=0; i < it; i++) {
     fillColor(255, 0, 0);
@@ -39,4 +52,22 @@ void fillTest(int d, int it) {
   }
 }
 
+void pulse() {
+  int startColor = 0;
+  int endColor = 255;
+  int d = 0;
+
+  while (true) {
+
+    for (int i=startColor; i<=endColor; i+=2) {
+      fillColor(i, i, i);
+      delay(d);
+    }
+
+    for (int i=endColor; i>=startColor; i-=2) {
+      fillColor(i, i, i);
+      delay(d);
+    }
+  }
+}
 
