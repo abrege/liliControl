@@ -10,18 +10,19 @@ NetAddress lili;
 
 void setup() {
   size(100, 100);
-  lili = new NetAddress("192.168.0.29", 8000);
+  lili = new NetAddress("192.168.0.29", 8001);
   oscP5 = new OscP5(this, 9000);
   
   // test procedure
   off();
-  fillTest(500,1);
-  off();
+  //fillTest(1000,3);
+  //off();
   
- // pulse();
+  //pulse();
+  testPixel();
 
 }
 void draw() {
   
-  pulse();
+  //pulse();
 }
