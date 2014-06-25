@@ -57,14 +57,14 @@ void pulse() {
   int endColor = 255;
   int d = 0;
 
-  while (true) {
+  for (int j=0; j<5; j++) {
 
-    for (int i=startColor; i<=endColor; i+=2) {
+    for (int i=startColor; i<=endColor; i+=10) {
       fillColor(i, i, i);
       delay(d);
     }
 
-    for (int i=endColor; i>=startColor; i-=2) {
+    for (int i=endColor; i>=startColor; i-=10) {
       fillColor(i, i, i);
       delay(d);
     }

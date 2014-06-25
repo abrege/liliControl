@@ -12,17 +12,35 @@ void setup() {
   size(100, 100);
   lili = new NetAddress("192.168.0.29", 8001);
   oscP5 = new OscP5(this, 9000);
-  
+
   // test procedure
   off();
   //fillTest(1000,3);
   //off();
-  
-  //pulse();
-  testPixel();
 
+  //pulse();
+  // testPixel();
 }
 void draw() {
-  
+
   //pulse();
 }
+
+
+void keyPressed() {
+
+  switch (key) {
+  case 'a':
+    fillTest(100, 1);
+    break;
+  case 'z':
+    pulse();  
+    break; 
+  case 'e':
+    testPixel();
+    break;
+  default:  
+    break;
+  }
+}
+
