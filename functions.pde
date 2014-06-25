@@ -34,10 +34,9 @@ void testPixel() {
     else
       pixel(192-i, 0, 0, 0);
     update();
+
   }
 }
-
-
 
 void fillTest(int d, int it) {
   for (int i=0; i < it; i++) {
@@ -50,6 +49,7 @@ void fillTest(int d, int it) {
     fillColor(255, 255, 255);
     delay(d);
   }
+  off();
 }
 
 void pulse() {
@@ -57,17 +57,18 @@ void pulse() {
   int endColor = 255;
   int d = 0;
 
-  for (int j=0; j<5; j++) {
+  for (int j=0; j<3; j++) {
 
     for (int i=startColor; i<=endColor; i+=10) {
       fillColor(i, i, i);
       delay(d);
     }
 
-    for (int i=endColor; i>=startColor; i-=10) {
+    for (int i=endColor; i>=startColor; i-=10  ) {
       fillColor(i, i, i);
       delay(d);
     }
+      off();
   }
 }
 
