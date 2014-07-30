@@ -10,7 +10,7 @@ NetAddress lili;
 
 void setup() {
   size(100, 100);
-  lili = new NetAddress("192.168.0.29", 8001);
+  lili = new NetAddress("lili.local", 8000);
   oscP5 = new OscP5(this, 9000);
 
   // test procedure
