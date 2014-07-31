@@ -23,7 +23,20 @@ void pixel(int p, int r, int g, int b) {
   pixel.add(g);
   pixel.add(b);
   oscP5.send(pixel, lili);
-  update();
+}
+
+void pixelRGB(int p, color rgb) {
+  OscMessage pixel = new OscMessage("/pixel");
+  
+  int r = (rgb >> 16) & 0xFF;  // Faster way of getting red(argb)
+  int g = (rgb >> 8) & 0xFF;   // Faster way of getting green(argb)
+  int b = rgb & 0xFF;          // Faster way of getting blue(argb)
+  
+  pixel.add(p);
+  pixel.add(r);
+  pixel.add(g);
+  pixel.add(b);
+  oscP5.send(pixel, lili);
 }
 
 void testPixel() {
