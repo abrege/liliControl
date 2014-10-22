@@ -65,7 +65,7 @@ void fillTest(int d, int it) {
   off();
 }
 
-void pulse() {
+void pulseTest() {
   int startColor = 0;
   int endColor = 255;
   int d = 0;
