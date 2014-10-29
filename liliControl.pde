@@ -24,12 +24,12 @@ ControlP5 cp5;
 NetAddress lili;
 
 void setup() {
+  println("liliControl -- START");
   size(140, 600);
   lili = new NetAddress("lili.local", 8000);
   oscP5 = new OscP5(this, 9000);
   cp5 = new ControlP5(this);
   //testPixel();
-  gradientRGB(color(0,0,0), color(255,255,255), 192);
   // GUI
     cp5.addSlider("R1")
      .setPosition(20,20)
@@ -81,8 +81,10 @@ void draw() {
   noStroke();
   fill(color1);
   rect(0,0,140,90);
-   fill(color2);
-   rect(0,90,140,90);
+  fill(color2);
+  rect(0,90,140,90);
+  
+  
 
   
 }

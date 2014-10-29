@@ -25,6 +25,9 @@ void fillColorRGB(color rgb) {
   fill.add(r);
   fill.add(g);
   fill.add(b);
+  
+   println("All pixels colored in r=" + r + ", g=" + g + ", b=" + b + ".");
+
   oscP5.send(fill, lili);
 }
 
@@ -49,6 +52,8 @@ void pixelRGB(int p, color rgb) {
   pixel.add(r);
   pixel.add(g);
   pixel.add(b);
+ 
+ println("Pixel " + p + " colored in r=" + r + ", g=" + g + ", b=" + b + ".");
   oscP5.send(pixel, lili);
 }
 
@@ -56,7 +61,6 @@ void gradientRGB(color c1, color c2, int steps) {
   for (int i=0;i<steps;i++) {
     float amt = map(i, 0, steps, 0.0, 1.0);
     color resultColor = lerpColor(c1, c2, amt);
-    println(resultColor);
     pixelRGB(i, resultColor);
   }
 
