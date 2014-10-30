@@ -57,25 +57,48 @@ void pixelRGB(int p, color c) {
   oscP5.send(pixel, lili);
 }
 
-void gradientRGB(color c1, color c2, int steps) {
+void gradientLinear(color c1, color c2, int steps) {
   for (int i=0; i<steps; i++) {
     float amt = map(i, 0, steps, 0.0, 1.0);
     color resultColor = lerpColor(c1, c2, amt);
     pixelRGB(i, resultColor);
   }
+  update();
 }
 
-void testPixel() {
-  fillColorRGB(white);
-  delay(2000);
-  off();
-  pixelRGB(10, red);
-  pixelRGB(20, red);
-  pixelRGB(30, red);
-  pixelRGB(40, red);
-  pixelRGB(50, red);
-  pixelRGB(60, red);
-  pixelRGB(70, red);
+void gradientTubular(color c1, color c2) {
+  for (int i=0; i<48; i++) {
+    float amt = map(i, 0, 48, 0.0, 1.0);
+    color resultColor = lerpColor(c1, c2, amt);
+    pixelRGB(i, resultColor);
+  }
+  for (int i=48; i<95; i++) {
+    float amt = map(i, 95, 48, 0.0, 1.0);
+    color resultColor = lerpColor(c1, c2, amt);
+    pixelRGB(i, resultColor);
+  }
+    for (int i=95; i<144; i++) {
+    float amt = map(i, 95, 144, 0.0, 1.0);
+    color resultColor = lerpColor(c1, c2, amt);
+    pixelRGB(i, resultColor);
+  }
+    for (int i=144; i<192; i++) {
+    float amt = map(i, 192, 144, 0.0, 1.0);
+    color resultColor = lerpColor(c1, c2, amt);
+    pixelRGB(i, resultColor);
+  }  
+
+  update();
+}
+void testPixelRGB() {
+  for (int i=0; i<192; i++) {
+    pixelRGB(i, color(255, 255, 255));
+    if (8<i)
+      pixelRGB(i-8, color(0, 0, 0));
+    else
+      pixelRGB(192-i, color(255, 255, 255));
+    update();
+  }
 }
 
 void testFill(int d, int it) {

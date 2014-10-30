@@ -60,26 +60,35 @@ void setup() {
       .setRange(0, 255)
         ;
 
-  cp5.addButton("fillColor1")
+  cp5.addButton("alloff")
     .setValue(0)
       .setPosition(0, 180)
         .setSize(140, 20)
           ;
-
-  cp5.addButton("fillColor2")
+  cp5.addButton("fillColor1")
     .setValue(0)
       .setPosition(0, 200)
         .setSize(140, 20)
           ;
 
-  cp5.addButton("gradient")
+  cp5.addButton("fillColor2")
     .setValue(0)
       .setPosition(0, 220)
         .setSize(140, 20)
           ;
 
+  cp5.addButton("gradient_A")
+    .setValue(0)
+      .setPosition(0, 240)
+        .setSize(140, 20)
+          ;
+  cp5.addButton("gradient_B")
+    .setValue(0)
+      .setPosition(0, 260)
+        .setSize(140, 20)
+          ;
   println("liliControl -- START");
-  testPixel();
+//  testPixelRGB();
 }
 
 void draw() {
@@ -119,6 +128,9 @@ void B2(int theColor) {
   B2 = theColor;
   color2=color(R2, G2, B2);
 }
+void alloff() {
+  off();
+}
 
 void fillColor1() {
   fillColorRGB(color1);
@@ -127,7 +139,10 @@ void fillColor1() {
 void fillColor2() {
   fillColorRGB(color2);
 }
-void gradient() {
-  gradientRGB(color1, color2, 192);
+void gradient_A() {
+  gradientLinear(color1, color2, 192);
+}
+void gradient_B() {
+  gradientTubular(color1, color2);
 }
 
